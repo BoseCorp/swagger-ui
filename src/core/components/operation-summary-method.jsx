@@ -18,8 +18,13 @@ export default class OperationSummaryMethod extends PureComponent {
       method,
     } = this.props
 
+    let methodText = method.toUpperCase()
+    if (methodText == "OPTIONS") {
+      methodText = "NOTIFY"
+    }
+
     return (
-      <span className="opblock-summary-method">{method.toUpperCase()}</span>
+      <span className="opblock-summary-method">{methodText}</span>
     )
   }
 }
